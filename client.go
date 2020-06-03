@@ -1,46 +1,73 @@
 package main
 
 import (
-	"log"
+	"bufio"
+	"fmt"
 	"net"
 	"os"
-	"strconv"
-	"strings"
+	"sync"
 )
 
 const (
-	message       = "Ping"
-	StopCharacter = "\r\n\r\n"
+	CONN_PORT = ":3333"
+	CONN_TYPE = "tcp"
+
+	MSG_DISCONNECT = "Disconnected from the server.\n"
 )
 
-func SocketClient(ip string, port int) {
-	addr := strings.Join([]string{ip, strconv.Itoa(port)}, ":")
-	conn, err := net.Dial("tcp", addr)
+var wg sync.WaitGroup
 
-	if err != nil {
-		log.Fatalln(err)
-		os.Exit(1)
+// Reads from the socket and outputs to the console.
+func Read(conn net.Conn) {
+	reader := bufio.NewReader(conn)
+	for {
+		str, err := reader.ReadString('\n')
+		if err != nil {
+			fmt.Printf(MSG_DISCONNECT)
+			wg.Done()
+			return
+		}
+		fmt.Print(str)
 	}
-
-	defer conn.Close()
-
-	conn.Write([]byte(message))
-	conn.Write([]byte(StopCharacter))
-	log.Printf("Send: %s", message)
-
-	buff := make([]byte, 1024)
-	n, _ := conn.Read(buff)
-	log.Printf("Receive: %s", buff[:n])
-
 }
 
+// Reads from Stdin, and outputs to the socket.
+func Write(conn net.Conn) {
+	reader := bufio.NewReader(os.Stdin)
+	writer := bufio.NewWriter(conn)
+
+	for {
+		str, err := reader.ReadString('\n')
+		if err != nil {
+			fmt.Println(err)
+			os.Exit(1)
+		}
+
+		_, err = writer.WriteString(str)
+		if err != nil {
+			fmt.Println(err)
+			os.Exit(1)
+		}
+		err = writer.Flush()
+		if err != nil {
+			fmt.Println(err)
+			os.Exit(1)
+		}
+	}
+}
+
+// Starts up a read and write thread which connect to the server through the
+// a socket connection.
 func main() {
+	wg.Add(1)
 
-	var (
-		ip   = "127.0.0.1"
-		port = 3333
-	)
+	conn, err := net.Dial(CONN_TYPE, CONN_PORT)
+	if err != nil {
+		fmt.Println(err)
+	}
 
-	SocketClient(ip, port)
+	go Read(conn)
+	go Write(conn)
 
+	wg.Wait()
 }
