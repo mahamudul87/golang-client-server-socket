@@ -12,7 +12,7 @@ const (
 	CONN_PORT = ":3333"
 	CONN_TYPE = "tcp"
 
-	MSG_DISCONNECT = "Disconnected from the server.\n"
+	MSG_DISCONNECT = "Disconnected...\n"
 )
 
 var wg sync.WaitGroup
