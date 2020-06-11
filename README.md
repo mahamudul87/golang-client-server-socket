@@ -1,4 +1,4 @@
-# Golang socket programming chat application
+# Golang socket based chat application
 `go version 1.14.2`\
 `Socket type: TCP`\
 `Server listening port :3333`
