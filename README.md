@@ -23,9 +23,7 @@ client:
 
 ## Application Options
 
-
-when client started, It will connect to the server (port :3333) automatically.\
-Maximum 10 clients can connect at a time.
+Maximum 10 clients are allowed to connect at a time.
 
 
 client has below options:
