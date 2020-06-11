@@ -16,8 +16,8 @@ client:
 > go run client.go
 
 ## Code Editor
-`Visual Studio Code`. 
-`Version: 1.45.1`. 
+`Visual Studio Code`\
+`Version: 1.45.1`
 
 
 
