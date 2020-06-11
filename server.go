@@ -249,10 +249,10 @@ func (lobby *Lobby) Help(client *Client) {
 	client.outgoing <- "Commands:\n"
 	client.outgoing <- "help - lists all commands\n"
 	client.outgoing <- "list - lists all chat rooms\n"
-	client.outgoing <- "create ist - creates a chat room named ist\n"
-	client.outgoing <- "join ist - joins a chat room named ist\n"
+	client.outgoing <- "create {room name} - creates a chat room named {room name}\n"
+	client.outgoing <- "join {room name} - joins a chat room named {room name}\n"
 	client.outgoing <- "leave - leaves the current chat room\n"
-	client.outgoing <- "name ist - changes your name to ist\n"
+	client.outgoing <- "name {your name} - changes your name to {your name} into chat room\n"
 	client.outgoing <- "quit - quits the program\n"
 	client.outgoing <- "\n"
 	log.Println("client requested help")
