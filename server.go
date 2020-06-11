@@ -16,7 +16,7 @@ const (
 
 	MAX_CLIENTS = 10
 
-	CMD_PREFIX = "/"
+	CMD_PREFIX = ""
 	CMD_CREATE = CMD_PREFIX + "create"
 	CMD_LIST   = CMD_PREFIX + "list"
 	CMD_JOIN   = CMD_PREFIX + "join"
@@ -42,7 +42,7 @@ const (
 	NOTICE_PERSONAL_CREATE = NOTICE_PREFIX + "Created chat room \"%s\".\n"
 	NOTICE_PERSONAL_NAME   = NOTICE_PREFIX + "Changed name to \"\".\n"
 
-	MSG_CONNECT = "Welcome to the server! Type \"/help\" to get a list of commands.\n"
+	MSG_CONNECT = "Welcome to the server! Type \"help\" to get a list of commands.\n"
 	MSG_FULL    = "Server is full. Please try reconnecting later."
 
 	EXPIRY_TIME time.Duration = 7 * 24 * time.Hour
@@ -247,13 +247,13 @@ func (lobby *Lobby) ListChatRooms(client *Client) {
 func (lobby *Lobby) Help(client *Client) {
 	client.outgoing <- "\n"
 	client.outgoing <- "Commands:\n"
-	client.outgoing <- "/help - lists all commands\n"
-	client.outgoing <- "/list - lists all chat rooms\n"
-	client.outgoing <- "/create ist - creates a chat room named ist\n"
-	client.outgoing <- "/join ist - joins a chat room named ist\n"
-	client.outgoing <- "/leave - leaves the current chat room\n"
-	client.outgoing <- "/name ist - changes your name to ist\n"
-	client.outgoing <- "/quit - quits the program\n"
+	client.outgoing <- "help - lists all commands\n"
+	client.outgoing <- "list - lists all chat rooms\n"
+	client.outgoing <- "create ist - creates a chat room named ist\n"
+	client.outgoing <- "join ist - joins a chat room named ist\n"
+	client.outgoing <- "leave - leaves the current chat room\n"
+	client.outgoing <- "name ist - changes your name to ist\n"
+	client.outgoing <- "quit - quits the program\n"
 	client.outgoing <- "\n"
 	log.Println("client requested help")
 }
