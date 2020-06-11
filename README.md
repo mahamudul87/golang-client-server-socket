@@ -1,4 +1,4 @@
-# Golang socket programming chat applicaiton
+# Golang socket programming chat application
 `go version 1.14.2`\
 `Socket type: TCP`\
 `Server listening port :3333`
@@ -6,7 +6,7 @@
 
 
 ## How to run
-Need to run client and server code seperately.
+Need to run client and server code separately.
 
 Server: 
 > go run server.go
