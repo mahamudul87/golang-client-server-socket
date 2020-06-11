@@ -30,10 +30,10 @@ client has below options:
 
 * help - lists all commands.
 * list - lists all chat rooms.
-* create ist - creates a chat room named ist.
-* join ist - joins a chat room named ist.
+* create {room name} - creates a chat room named {room name}.
+* join {room name} - joins a chat room named {room name}.
 * leave - leaves the current chat room.
-* name ist - changes your name to ist.
+* name {your name} - changes your name to {your name} into the chat room.
 * quit - quits the program.
 
 
