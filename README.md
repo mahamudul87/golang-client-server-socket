@@ -1,8 +1,8 @@
 # golang-client-server-socket
-Golang socket programming starter project for chat applicaiton
-`go version 1.14.2`
-`Socket type: TCP`
-`Server listening port :3333`
+Golang socket programming starter project for chat applicaiton. 
+`go version 1.14.2`. 
+`Socket type: TCP`. 
+`Server listening port :3333`. 
 
 
 
@@ -16,8 +16,8 @@ client:
 > go run client.go
 
 ## Code Editor
-> Visual Studio Code
-> Version: 1.45.1
+`Visual Studio Code`. 
+`Version: 1.45.1`. 
 
 
 
