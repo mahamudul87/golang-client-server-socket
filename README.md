@@ -1,15 +1,35 @@
-# Golang socket programming starter project for chat applicaiton
+# golang-client-server-socket
+Golang socket programming starter project for chat applicaiton
+> go version 1.14.2
+> Socket type: TCP
+> Server listening port :3333
 
 
-Socket type: TCP
 
-Server listening port :3333
+## How to run
+Need to run client and server code seperately.
+
+Server: 
+> go run server.go
+
+client:
+> go run client.go
+
+## Code Editor
+> Visual Studio Code
+> Version: 1.45.1
+
+
+
+
+## Application Options
 
 
 when client started then automatically connect to server to the server port :3333
+Maximum 10 clients can connect at a time.
 
 
-## Chat Commands:
+after joining client has below options:
 
 * help - lists all commands.
 * list - lists all chat rooms.
@@ -21,3 +41,5 @@ when client started then automatically connect to server to the server port :333
 
 
 so using above options client can create and join into the chat room.
+
+WARNING - You have to allow the listening port :3333 `#f03c15`
