@@ -24,11 +24,11 @@ client:
 ## Application Options
 
 
-when client started then automatically connect to server to the server port :3333
+when client started, It will connect to the server (port :3333) automatically.\
 Maximum 10 clients can connect at a time.
 
 
-after joining client has below options:
+client has below options:
 
 * help - lists all commands.
 * list - lists all chat rooms.
