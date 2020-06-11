@@ -1,8 +1,8 @@
 # golang-client-server-socket
 Golang socket programming starter project for chat applicaiton
-> go version 1.14.2
-> Socket type: TCP
-> Server listening port :3333
+_go version 1.14.2_
+_Socket type: TCP_
+_Server listening port :3333_
 
 
 
@@ -42,4 +42,6 @@ after joining client has below options:
 
 so using above options client can create and join into the chat room.
 
-WARNING - You have to allow the listening port :3333 `#f03c15`
+```diff
+! WARNING - You have to allow the listening port :3333
+```
