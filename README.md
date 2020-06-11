@@ -1,10 +1,8 @@
 # golang-client-server-socket
 Golang socket programming starter project for chat applicaiton\
 `go version 1.14.2`\
-
-`Socket type: TCP`\ 
-
-`Server listening port :3333`\
+`Socket type: TCP`\
+`Server listening port :3333`
 
 
 
